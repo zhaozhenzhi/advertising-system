@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ad-getaway</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>ad-getaway-zuul</module>
+        <module>ad-getaway-spring-getaway</module>
+    </modules>
+
 
 
 </project>

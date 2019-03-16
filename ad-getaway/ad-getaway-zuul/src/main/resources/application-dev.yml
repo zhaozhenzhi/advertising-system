@@ -1,0 +1,5 @@
+## 服务中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9110/eureka/
