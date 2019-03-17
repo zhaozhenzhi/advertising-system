@@ -1,0 +1,14 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhaozhenzhi/spring-config-center.git
+          ## searchPaths: config-center
+          label: master
+          username: 1306123139@qq.com

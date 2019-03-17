@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /ad-service-sponsor
+## 项目名称
+spring:
+  application:
+    name: ad-service-sponsor
+  profiles:
+    include: dev
