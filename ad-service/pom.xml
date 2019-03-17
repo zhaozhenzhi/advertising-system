@@ -18,6 +18,25 @@
         <module>ad-service-sponsor</module>
     </modules>
 
+    <properties>
+        <ad-service-common.version>1.0-SNAPSHOT</ad-service-common.version>
+        <mysql.connector.version>8.0.12</mysql.connector.version>
+    </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>advertising-system-center</groupId>
+                <artifactId>ad-service-common</artifactId>
+                <version>${ad-service-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

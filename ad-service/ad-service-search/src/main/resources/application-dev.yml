@@ -33,3 +33,13 @@ spring:
       max-lifetime: 1800000
       ## 数据库连接超时时间,默认30秒，即30000
       connection-timeout: 30000
+
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

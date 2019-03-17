@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @description AdUser持久层数据表接口
  * @date 2019/3/17 10:48
  */
+
 public interface AdUserRespository extends JpaRepository<AdUserEntity,Long> {
 
     /**

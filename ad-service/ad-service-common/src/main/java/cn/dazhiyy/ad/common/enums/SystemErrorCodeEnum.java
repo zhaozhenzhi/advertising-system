@@ -42,6 +42,11 @@ public enum  SystemErrorCodeEnum {
     CANCEL_CONCERN_FAILURE(1007,"cancel_concern_failure"),
     SUBSCRIPTION_FAILURE(1008,"subscription_failure"),
     CANCEL_SUBSCRIPTION_FAILURE(1009,"cancel_subscription_failure"),
+
+    USER_NAME_IS_NOT_NULL(2000,"user_name_is_not_null"),
+    USER_IS_EXIST(2001,"user_is_exist"),
+
+    NO_KNOW_ERROR(2002,"no_know_error")
     ;
     private Integer code;
     private String msg;

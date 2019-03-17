@@ -1,5 +1,7 @@
 package cn.dazhiyy.ad.service;
 
+import cn.dazhiyy.ad.vo.AdUserResponseVO;
+
 /**
  * @author dazhi
  * @projectName cn.dazhiyy.advert
@@ -9,4 +11,12 @@ package cn.dazhiyy.ad.service;
  * @date 2019/3/17 11:04
  */
 public interface AdUserService {
+
+    /**
+     * 根据用户名查询用户
+     * @param username 用户名
+     * @return 用户信息
+     */
+    AdUserResponseVO findByUsername(String username);
+
 }
