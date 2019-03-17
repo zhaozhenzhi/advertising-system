@@ -22,7 +22,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "ad_unit")
-public class AdUnit {
+public class AdUnitEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,8 +58,8 @@ public class AdUnit {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    public AdUnit(Long planId, String unitName,
-                  Integer positionType, Long budget) {
+    public AdUnitEntity(Long planId, String unitName,
+                        Integer positionType, Long budget) {
         this.planId = planId;
         this.unitName = unitName;
         this.unitStatus = CommonStatus.VALID.getCode();

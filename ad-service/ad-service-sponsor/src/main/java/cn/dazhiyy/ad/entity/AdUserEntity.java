@@ -22,7 +22,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "ad_user")
-public class AdUser {
+public class AdUserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,7 +49,7 @@ public class AdUser {
     @Column(name = "update_time", nullable = false)
     private Date updateTime;
 
-    public AdUser(String username, String token) {
+    public AdUserEntity(String username, String token) {
         this.username = username;
         this.token = token;
         this.userStatus = CommonStatus.VALID.getCode();
