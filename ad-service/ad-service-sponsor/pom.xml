@@ -19,5 +19,6 @@
             <groupId>advertising-system-center</groupId>
             <artifactId>ad-service-common</artifactId>
         </dependency>
+
     </dependencies>
 </project>

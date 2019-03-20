@@ -1,9 +1,0 @@
-## 项目名称
-spring:
-  application:
-    name: ad-getaway
-  profiles:
-    include: dev
-## 端口号
-server:
-  port: 9000

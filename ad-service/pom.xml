@@ -16,6 +16,7 @@
         <module>ad-service-dashboard</module>
         <module>ad-service-search</module>
         <module>ad-service-sponsor</module>
+        <module>ad-service-mail</module>
     </modules>
 
     <properties>
