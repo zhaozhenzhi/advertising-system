@@ -1,13 +1,15 @@
 package cn.dazhiyy.ad.index.keyword;
 
-import cn.dazhiyy.ad.common.factory.SetFactory;
+import cn.dazhiyy.ad.common.factory.ContainerFactory;
 import cn.dazhiyy.ad.index.IndexAware;
+import cn.dazhiyy.ad.index.IndexTableName;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
@@ -22,6 +24,7 @@ import java.util.concurrent.ConcurrentSkipListSet;
  */
 @Slf4j
 @Component
+@IndexTableName(name = "ad_unit_keyword")
 public class KeywordIndex implements IndexAware<String, Set<Long>> {
 
     private Map<String, Set<Long>> keywordIndexMap = Maps.newConcurrentMap();
@@ -38,13 +41,18 @@ public class KeywordIndex implements IndexAware<String, Set<Long>> {
 
     @Override
     public void add(String key, Set<Long> value) {
-        Set<Long> unitIds = SetFactory.setorCreate(key, keywordIndexMap, ConcurrentSkipListSet::new);
+        Set<Long> unitIds = ContainerFactory.setorCreate(key, keywordIndexMap, ConcurrentSkipListSet::new);
         unitIds.addAll(value);
         //倒排索引
         for (Long unitId : unitIds) {
-            Set<String> keywords = SetFactory.setorCreate(unitId, unitIndexMap, ConcurrentSkipListSet::new);
+            Set<String> keywords = ContainerFactory.setorCreate(unitId, unitIndexMap, ConcurrentSkipListSet::new);
             keywords.add(key);
         }
+    }
+
+    @Override
+    public void add(List<Map<String, String>> data) {
+
     }
 
     @Override
@@ -54,11 +62,11 @@ public class KeywordIndex implements IndexAware<String, Set<Long>> {
 
     @Override
     public void delete(String key, Set<Long> value) {
-        Set<Long> unitIds = SetFactory.setorCreate(key, keywordIndexMap, ConcurrentSkipListSet::new);
+        Set<Long> unitIds = ContainerFactory.setorCreate(key, keywordIndexMap, ConcurrentSkipListSet::new);
         unitIds.removeAll(value);
         //倒排索引删除
         for (Long unitId : unitIds) {
-            Set<String> keywords = SetFactory.setorCreate(unitId, unitIndexMap, ConcurrentSkipListSet::new);
+            Set<String> keywords = ContainerFactory.setorCreate(unitId, unitIndexMap, ConcurrentSkipListSet::new);
             keywords.remove(key);
         }
     }

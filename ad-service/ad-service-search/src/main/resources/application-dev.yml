@@ -43,3 +43,14 @@ management:
     web:
       exposure:
         include: "*"
+binlog:
+  mysql:
+    db:
+      advertisement:
+        host: cdb-ahs4c0jv.gz.tencentcdb.com
+        port: 10050
+        username: root
+        password: dazhi-1993aini
+
+
+

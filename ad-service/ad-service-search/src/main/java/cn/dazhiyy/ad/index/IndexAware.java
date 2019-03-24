@@ -1,5 +1,8 @@
 package cn.dazhiyy.ad.index;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author dazhi
  * @projectName cn.dazhiyy.advert
@@ -27,6 +30,13 @@ public interface IndexAware<K,V> {
     void add(K key,V value);
 
     /**
+     * 添加数据
+     *
+     * @param data
+     */
+    void add(List<Map<String,String>> data);
+
+    /**
      * 更新索引
      *
      * @param key
@@ -40,4 +50,6 @@ public interface IndexAware<K,V> {
      * @param key
      */
     void delete(K key,V value);
+
+
 }

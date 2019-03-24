@@ -1,8 +1,11 @@
 package cn.dazhiyy.ad.index.adunit;
 
 import cn.dazhiyy.ad.index.IndexAware;
+import cn.dazhiyy.ad.index.IndexTableName;
 import com.google.common.collect.Maps;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,6 +16,8 @@ import java.util.Map;
  * @description TODO
  * @date 2019/3/19 13:52
  */
+@Component
+@IndexTableName(name = "ad_unit")
 public class AdUnitIndex implements IndexAware<Long,AdUnitBean> {
 
     private Map<Long,AdUnitBean> adUnitBeanMap = Maps.newConcurrentMap();
@@ -28,6 +33,11 @@ public class AdUnitIndex implements IndexAware<Long,AdUnitBean> {
     @Override
     public void add(Long key, AdUnitBean value) {
         adUnitBeanMap.put(key,value);
+    }
+
+    @Override
+    public void add(List<Map<String, String>> data) {
+
     }
 
     @Override

@@ -8,7 +8,5 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/zhaozhenzhi/spring-config-center.git
+          uri: https://github.com/zhaozhenzhi/spring-config-center
           ## searchPaths: config-center
-          label: master
-          username: 1306123139@qq.com

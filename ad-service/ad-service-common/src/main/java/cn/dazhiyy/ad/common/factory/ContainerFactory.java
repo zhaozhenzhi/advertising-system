@@ -11,7 +11,7 @@ import java.util.function.Supplier;
  * @description TODO
  * @date 2019/3/19 21:29
  */
-public class SetFactory {
+public class ContainerFactory {
 
     /**
      * 判断map中的key是否有值，如果没有创建一个新值

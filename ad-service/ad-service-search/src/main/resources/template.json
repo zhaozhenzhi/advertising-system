@@ -1,0 +1,48 @@
+{
+  "databaseList":[{
+      "databaseName": "advertisement",
+      "tableList": [
+        {
+          "tableName": "ad_plan",
+          "level": 2,
+          "insert": [
+            {"column": "id"},
+            {"column": "user_id"},
+            {"column": "plan_status"},
+            {"column": "start_date"},
+            {"column": "end_date"}
+          ],
+          "update": [
+            {"column": "id"},
+            {"column": "user_id"},
+            {"column": "plan_status"},
+            {"column": "start_date"},
+            {"column": "end_date"}
+          ],
+          "delete": [
+            {"column": "id"}
+          ]
+        },
+        {
+          "tableName": "ad_unit",
+          "level": 3,
+          "insert": [
+            {"column": "id"},
+            {"column": "unit_status"},
+            {"column": "position_type"},
+            {"column": "plan_id"}
+          ],
+          "update": [
+            {"column": "id"},
+            {"column": "unit_status"},
+            {"column": "position_type"},
+            {"column": "plan_id"}
+          ],
+          "delete": [
+            {"column": "id"}
+          ]
+        }
+      ]
+    }
+  ]
+}
